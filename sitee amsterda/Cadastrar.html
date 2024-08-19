@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src='cadastro.js'></script>
+    <script src="code.js"></script>
+</head>
+<body>
+    <button id="voltar" class="btn-voltar">Home</button>
+    <button class = "botao" id="botaoOla"  >Digite seu nome </button>
+    <input type="text"  class="corletra"  id="texto" val="" placeholder="Digite seu nome">
+    <br>
+    <button class = "botao" id="turma">Digite seu RG</button>
+     <input type="text" class="corletra"  id="rg" val="" placeholder="Digite seu RG">
+    <br>
+    <button class = "botao" id="turma">Digite seu CPF</button>
+     <input type="text" class="corletra"  id="cpf" val="" placeholder="Digite seu CPF">
+     <br>
+     <button class = "botao" id="turma">Digite seu Email</button>
+     <input type="text" class="corletra"  id="email" val="" placeholder="Digite seu Email">
+     <br>
+    <select class="seleçao" id="combo">
+        <option val="1">Escolha sua cidade</option>
+        <option val="2">Suzano</option>
+        <option val="3">Ribeirão Pires</option>
+        <option val="4">Santo André</option>
+        <option val="5">Mauá</option>
+    </select>
+    <br>
+    <button class = "btn" id="turma"  onclick="funcao()" value="Exibir Alert" >Cadastrar</button>
+    <br>
+    
+</body>
+</html>

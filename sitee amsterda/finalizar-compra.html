@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Confirmação de Pagamento</title>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1>Compra Confirmada!</h1>
+        <p>Obrigado pela sua compra! Aqui estão os detalhes da sua transação:</p>
+        <div class="confirmation-details">
+            <h2 id="confirmation-product-name">Nome do Produto</h2>
+            <p id="confirmation-product-description">Descrição do Produto</p>
+            <p id="confirmation-product-price">Preço: R$ 0,00</p>
+        </div>
+        <p>Você receberá um e-mail de confirmação com os detalhes da sua compra.</p>
+        <a href="index.html" class="home-button">Voltar para a Página Inicial</a>
+    </div>
+
+    <script>
+        
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name'),
+                price: params.get('price'),
+                description: params.get('description'),
+                image: params.get('image')
+            };
+        }
+
+        
+        function updateConfirmationDetails() {
+            const params = getQueryParams();
+            if (params.name && params.price && params.description && params.image) {
+                document.getElementById('confirmation-product-name').innerText = params.name;
+                document.getElementById('confirmation-product-price').innerText = `Preço: R$ ${params.price}`;
+                document.getElementById('confirmation-product-description').innerText = params.description;
+                document.getElementById('confirmation-image').src = params.image;
+            }
+        }
+
+        
+        window.onload = updateConfirmationDetails;
+    </script>
+</body>
+</html>

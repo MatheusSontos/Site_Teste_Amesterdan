@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Pagamento</title>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Escolha o Meio de Pagamento</h1>
+        <form action="finalizar-compra.html" method="post">
+            <div class="payment-option">
+                <input type="radio" id="credit-card" name="payment" value="credit-card" required>
+                <label for="credit-card">Cartão de Crédito</label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="paypal" name="payment" value="paypal">
+                <label for="paypal">PayPal</label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" id="boleto" name="payment" value="boleto">
+                <label for="boleto">Boleto Bancário</label>
+            </div>
+            <button type="submit" class="submit-button">Confirmar Pagamento</button>
+        </form>
+    </div>
+</body>
+</html>

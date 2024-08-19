@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Comprar</title>
+</head>
+<body>
+    <div class="product-details">
+        <h2 id="product-name">Nome do Produto</h2>
+        <p id="product-price">Preço: R$ 0,00</p>
+        <button class="finalize-button" onclick="window.location.href='pagamento.html'">Finalizar Compra</button>
+    </div>
+
+    <script>
+
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name'),
+                price: params.get('price')
+            };
+        }
+
+        
+        function updateProductDetails() {
+            const params = getQueryParams();
+            if (params.name && params.price) {
+                document.getElementById('product-name').innerText = params.name;
+                document.getElementById('product-price').innerText = `Preço: R$ ${params.price}`;
+                
+                document.querySelector('.product-details img').src = `https://example.com/path-to-${params.name.replace(/ /g, '-').toLowerCase()}.jpg`;
+                document.getElementById('product-description').innerText = `Descrição do produto: ${params.name}`;
+            }
+        }
+
+       
+        window.onload = updateProductDetails;
+    </script>
+</body>
+</html>
